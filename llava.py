@@ -53,13 +53,11 @@ def get_installed_models(mm_proj=False):
     folder_paths.add_model_folder_path(
         model_type, str(Path(__file__).parent / "models")
     )
-    print(str(Path(__file__).parent / "models"))
     # ~ Register ./models/llama
     folder_paths.add_model_folder_path(
         model_type,
         str(Path(folder_paths.models_dir) / model_type),
     )
-    print(str(Path(folder_paths.models_dir) / model_type))
     add_extension_to_folder_path(model_type, model_fmt)
 
     models = folder_paths.get_filename_list(model_type)
